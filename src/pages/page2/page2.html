@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" class="login">
+                    <p>
+                      <label>Username:</label>
+                      <input type="text" name="username"
+                      ngModel required>
+                      </p>
+                      <p>
+                      <label>Password:</label>
+                      <input type="password" name="password"
+                      ngModel required>
+                      </p>
+                <div class="remember-forgot">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" />
+                                    Remember Me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" value="Login" [disabled]="!loginForm.valid" class="btn btn-success btn-sm">Submit</button>
+                </form>
+</ion-content>
